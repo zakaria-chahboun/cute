@@ -3,6 +3,7 @@ package cute
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
 /* new type : color */
@@ -48,10 +49,7 @@ func titleDraw(title string) (box string) {
 	bottomleft := "╰"
 
 	// draw line
-	var line = ""
-	for i := 0; i < len(title)+2; i++ {
-		line += w
-	}
+	line := strings.Repeat(w, len(title)+2)
 
 	// print title box
 	box = fmt.Sprintf("%v%v%v\n", topleft, line, topright)
