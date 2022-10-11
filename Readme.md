@@ -12,22 +12,32 @@ The idea is to simplify the printing of messages in the terminal, *exactly in ca
 ```go
 	cute.Println("Hi everyone", "My name is Zakaria!")
 ```
-![print line](./screenshots/01.png)
 
-As you see the default color for the title is `yellow` and for the message is `purple`.
+Screenshot
+
+<img src="./screenshots/01.png" alt="print line" width=500/>
+
+> As you see the default color for the title is `yellow` and for the message is `purple`.
 
 ### Print muti-lines
 ```go
 	cute.Println("Hi everyone", "My name is Zakaria!", "Zaki is my nick name.")
 ```
-![print line](./screenshots/02.png)
+
+Screenshot
+
+<img src="./screenshots/02.png" alt="print line" width=500/>
 
 ### Check error
 ```go
     // equal to (if error != nil)
 	cute.Check("Error", errors.New("This is a cute panic!"))
 ```
-![print line](./screenshots/03.png)
+
+Screenshot
+
+
+<img src="./screenshots/03.png" alt="print line" width=500/>
 
 ### Change colors
 You can change the colors:
@@ -45,13 +55,21 @@ You can change the colors:
 	cute.SetMessageColor(cute.ColorGreen)
 	cute.Println("Hi everyone", "My name is Zakaria!")
 ```
-![print line](./screenshots/04.png)
+
+Screenshot
+
+
+<img src="./screenshots/04.png" alt="print line" width=500/>
 
 ### Printf
 ```go
 	cute.Printf("Another title", "%s, a Country in North Africa.\n", "Morocco")
 ```
-![print line](./screenshots/05.png)
+
+Screenshot
+
+
+<img src="./screenshots/05.png" alt="print line" width=500/>
 
 -------
 Twitter: [@Zaki_Chahboun](https://twitter.com/zaki_chahboun)
