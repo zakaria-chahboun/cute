@@ -8,7 +8,7 @@ a cute Go print package, simple, no dependencies!
 ```zsh
 go get -u github.com/zakaria-chahboun/cute
 ```
-The idea is to simplify the printing of messages in the terminal, *exactly in case of error*. Letting you to put a title for your message in different colors.
+The idea is to simplify the printing of messages in the terminal, *especially in error case*. Letting you to put a title for your message in different colors.
 
 ### Print line
 ```go
@@ -19,7 +19,7 @@ Screenshot
 
 <img src="./screenshots/01.png" alt="print line" width=500/>
 
-> As you see the default color for the title is `yellow` and for the message is `purple`.
+> As you see the default color for the title is `bright yellow` and for the message is `bright purple`.
 
 ### Print muti-lines
 ```go
@@ -42,8 +42,11 @@ Screenshot
 <img src="./screenshots/03.png" alt="print line" width=500/>
 
 ### Change colors
-You can change the colors:
-* NoColor
+You can change the color:
+* ColorReset
+* ColorDefault
+
+* ColorBlack
 * ColorRed 
 * ColorYellow
 * ColorGreen 
@@ -52,9 +55,18 @@ You can change the colors:
 * ColorCyan   
 * ColorWhite 
 
+* ColorBrightBlack
+* ColorBrightRed 
+* ColorBrightYellow
+* ColorBrightGreen 
+* ColorBrightBlue  
+* ColorBrightPurple
+* ColorBrightCyan   
+* ColorBrightWhite 
+
 ```go
-	cute.SetTitleColor(cute.ColorBlue)
-	cute.SetMessageColor(cute.ColorGreen)
+	cute.SetTitleColor(cute.ColorBrightBlue)
+	cute.SetMessageColor(cute.ColorBrightGreen)
 	cute.Println("Hi everyone", "My name is Zakaria!")
 ```
 
