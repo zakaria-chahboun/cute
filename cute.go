@@ -38,7 +38,7 @@ func SetMessageColor(c CuteColor) {
 }
 
 /* Println */
-func Println(title string, messages ...string) {
+func Println(title string, messages ...interface{}) {
 	fmt.Printf("%v", current_title_color) // set the color
 	fmt.Println(titleDraw(title))
 	fmt.Printf("%v", current_message_color) // set the color
@@ -93,7 +93,7 @@ func titleDraw(title string) (box string) {
 }
 
 /* local draw message */
-func messageDraw(message string) (msg string) {
-	msg = fmt.Sprintf("🭬 %s", message)
+func messageDraw(message interface{}) (msg string) {
+	msg = fmt.Sprintf("🭬 %v", message)
 	return
 }
