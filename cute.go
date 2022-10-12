@@ -49,8 +49,8 @@ func SetMessageColor(c CuteColor) {
 	current_message_color = c
 }
 
-/* Println */
-func Println(title string, messages ...interface{}) {
+/* Printlines */
+func Printlines(title string, messages ...interface{}) {
 	// set the color
 	fmt.Printf("%v", current_title_color)
 	// print title
@@ -61,6 +61,21 @@ func Println(title string, messages ...interface{}) {
 	for _, m := range messages {
 		fmt.Println(messageDraw(m))
 	}
+	// reset
+	fmt.Printf("%v", ColorReset)
+}
+
+/* Println */
+func Println(title string, messages ...interface{}) {
+	// set the color
+	fmt.Printf("%v", current_title_color)
+	// print title
+	fmt.Println(titleWithBoxDraw(title))
+	// set the color
+	fmt.Printf("%v", current_message_color)
+	// print messages
+	var lines = fmt.Sprintln(messages...)
+	fmt.Println(messageDraw(lines))
 	// reset
 	fmt.Printf("%v", ColorReset)
 }

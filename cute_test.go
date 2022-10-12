@@ -20,7 +20,7 @@ func TestCuteFunctions(t *testing.T) {
 
 	SetTitleColor(ColorBrightBlue)
 	SetMessageColor(ColorBrightGreen)
-	Println("Hi everyone", "My name is Zakaria!")
+	Printlines("Table", "Row1", "Row2", "Row3")
 
 	Check("Error", errors.New("This is a cute panic!"))
 }
