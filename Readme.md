@@ -23,7 +23,7 @@ Screenshot
 
 ## Print muti-lines
 ```go
-cute.Println("Hi everyone", "My name is Zakaria!", "Zaki is my nick name.")
+cute.Printlines("Hi everyone", "My name is Zakaria!", "Zaki is my nick name.")
 ```
 
 Screenshot
