@@ -75,7 +75,9 @@ func Println(title string, messages ...interface{}) {
 	fmt.Printf("%v", current_message_color)
 	// print messages
 	var lines = fmt.Sprintln(messages...)
-	fmt.Println(messageDraw(lines))
+	if strings.TrimSpace(lines) != "" {
+		fmt.Println(messageDraw(lines))
+	}
 	// reset
 	fmt.Printf("%v", ColorReset)
 }

@@ -22,5 +22,8 @@ func TestCuteFunctions(t *testing.T) {
 	SetMessageColor(ColorBrightGreen)
 	Printlines("Table", "Row1", "Row2", "Row3")
 
+	Println("Just head1")
+	Printlines("Just head2")
+
 	Check("Error", errors.New("This is a cute panic!"))
 }
