@@ -7,34 +7,33 @@ import (
 )
 
 /* new type : color */
-type color string
+type CuteColor string
 
 /* list of available colors */
 const (
-	NoColor = "\033[0m"
-
-	ColorRed    = "\033[31m"
-	ColorYellow = "\033[33m"
-	ColorGreen  = "\033[32m"
-	ColorBlue   = "\033[34m"
-	ColorPurple = "\033[35m"
-	ColorCyan   = "\033[36m"
-	ColorWhite  = "\033[37m"
+	NoColor     CuteColor = "\033[0m"
+	ColorRed    CuteColor = "\033[31m"
+	ColorGreen  CuteColor = "\033[32m"
+	ColorYellow CuteColor = "\033[33m"
+	ColorBlue   CuteColor = "\033[34m"
+	ColorPurple CuteColor = "\033[35m"
+	ColorCyan   CuteColor = "\033[36m"
+	ColorWhite  CuteColor = "\033[37m"
 )
 
 /* local variables */
 var (
-	title_color   color = ColorYellow
-	message_color color = ColorPurple
+	title_color   CuteColor = ColorYellow
+	message_color CuteColor = ColorPurple
 )
 
 /* getter */
-func SetTitleColor(c color) {
+func SetTitleColor(c CuteColor) {
 	title_color = c
 }
 
 /* gitter */
-func SetMessageColor(c color) {
+func SetMessageColor(c CuteColor) {
 	message_color = c
 }
 
@@ -76,7 +75,7 @@ func Println(title string, messages ...string) {
 }
 
 /* println */
-func Printf(title string, message string, params ...any) {
+func Printf(title string, message string, params ...interface{}) {
 	fmt.Printf("%v", title_color) // set the color
 	fmt.Println(titleDraw(title))
 	fmt.Printf("%v", message_color) // set the color
