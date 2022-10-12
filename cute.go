@@ -23,18 +23,53 @@ const (
 
 /* local variables */
 var (
-	title_color   CuteColor = ColorYellow
-	message_color CuteColor = ColorPurple
+	current_title_color   CuteColor = ColorYellow
+	current_message_color CuteColor = ColorPurple
 )
 
-/* getter */
+/* Change the title color */
 func SetTitleColor(c CuteColor) {
-	title_color = c
+	current_title_color = c
 }
 
-/* gitter */
+/* Change the message color */
 func SetMessageColor(c CuteColor) {
-	message_color = c
+	current_message_color = c
+}
+
+/* Println */
+func Println(title string, messages ...string) {
+	fmt.Printf("%v", current_title_color) // set the color
+	fmt.Println(titleDraw(title))
+	fmt.Printf("%v", current_message_color) // set the color
+	for _, m := range messages {
+		fmt.Println(messageDraw(m))
+	}
+	fmt.Printf("%v", NoColor) // set no color
+}
+
+/* Println */
+func Printf(title string, message string, params ...interface{}) {
+	fmt.Printf("%v", current_title_color) // set the color
+	fmt.Println(titleDraw(title))
+	fmt.Printf("%v", current_message_color) // set the color
+	fmt.Printf(messageDraw(message), params...)
+	fmt.Printf("%v", NoColor) // set no color
+}
+
+/* a cute panic like */
+func Check(title string, err error) {
+	if err != nil {
+		// print title
+		fmt.Printf("%v", ColorYellow)
+		fmt.Println(titleDraw(title))
+
+		// print error message
+		fmt.Printf("%v", ColorRed)
+		fmt.Println("🗲", err.Error())
+		fmt.Printf("%v", NoColor)
+		os.Exit(1)
+	}
 }
 
 /* local drawing title */
@@ -61,39 +96,4 @@ func titleDraw(title string) (box string) {
 func messageDraw(message string) (msg string) {
 	msg = fmt.Sprintf("🭬 %s", message)
 	return
-}
-
-/* println */
-func Println(title string, messages ...string) {
-	fmt.Printf("%v", title_color) // set the color
-	fmt.Println(titleDraw(title))
-	fmt.Printf("%v", message_color) // set the color
-	for _, m := range messages {
-		fmt.Println(messageDraw(m))
-	}
-	fmt.Printf("%v", NoColor) // set no color
-}
-
-/* println */
-func Printf(title string, message string, params ...interface{}) {
-	fmt.Printf("%v", title_color) // set the color
-	fmt.Println(titleDraw(title))
-	fmt.Printf("%v", message_color) // set the color
-	fmt.Printf(messageDraw(message), params...)
-	fmt.Printf("%v", NoColor) // set no color
-}
-
-/* a cute panic like */
-func Check(title string, err error) {
-	if err != nil {
-		// print title
-		fmt.Printf("%v", ColorYellow)
-		fmt.Println(titleDraw(title))
-
-		// print error message
-		fmt.Printf("%v", ColorRed)
-		fmt.Println("🗲", err.Error())
-		fmt.Printf("%v", NoColor)
-		os.Exit(1)
-	}
 }
