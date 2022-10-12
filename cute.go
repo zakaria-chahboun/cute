@@ -51,41 +51,50 @@ func SetMessageColor(c CuteColor) {
 
 /* Println */
 func Println(title string, messages ...interface{}) {
-	fmt.Printf("%v", current_title_color) // set the color
-	fmt.Println(titleDraw(title))
-	fmt.Printf("%v", current_message_color) // set the color
+	// set the color
+	fmt.Printf("%v", current_title_color)
+	// print title
+	fmt.Println(titleWithBoxDraw(title))
+	// set the color
+	fmt.Printf("%v", current_message_color)
+	// print messages
 	for _, m := range messages {
 		fmt.Println(messageDraw(m))
 	}
-	fmt.Printf("%v", ColorReset) // set no color
+	// reset
+	fmt.Printf("%v", ColorReset)
 }
 
 /* Println */
 func Printf(title string, message string, params ...interface{}) {
-	fmt.Printf("%v", current_title_color) // set the color
-	fmt.Println(titleDraw(title))
-	fmt.Printf("%v", current_message_color) // set the color
+	// set the color
+	fmt.Printf("%v", current_title_color)
+	// print title
+	fmt.Println(titleWithBoxDraw(title))
+	// set the color
+	fmt.Printf("%v", current_message_color)
+	// print messages
 	fmt.Printf(messageDraw(message), params...)
-	fmt.Printf("%v", ColorReset) // set no color
+	// reset
+	fmt.Printf("%v", ColorReset)
 }
 
 /* a cute panic like */
 func Check(title string, err error) {
 	if err != nil {
-		// print title
-		fmt.Printf("%v", ColorBrightYellow)
-		fmt.Println(titleDraw(title))
-
-		// print error message
+		// set the color
 		fmt.Printf("%v", ColorBrightRed)
+		// print title
+		fmt.Println(titleWithBoxDraw(title))
+		// print error message
 		fmt.Println("🗲", err.Error())
 		fmt.Printf("%v", ColorReset)
 		os.Exit(1)
 	}
 }
 
-/* local drawing title */
-func titleDraw(title string) (box string) {
+/* local draw title with box */
+func titleWithBoxDraw(title string) (box string) {
 	// box elements
 	topright := "╮"
 	topleft := "╭"
