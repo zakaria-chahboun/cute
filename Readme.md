@@ -80,6 +80,9 @@ Screenshot
 
 <img src="./screenshots/05.png" alt="printf" width=500/>
 
+## Note
+If the results does not appear well. We suggest you to use fonts like `MesloLGS NF` or `Fira Code` in your terminal!
+
 ## Real example
 [Tarjem](https://github.com/zakaria-chahboun/tarjem) is used our cute package, Here are some examples:
 
