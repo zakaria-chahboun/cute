@@ -49,8 +49,8 @@ func SetMessageColor(c CuteColor) {
 	current_message_color = c
 }
 
-/* Printlines */
-func Printlines(title string, messages ...interface{}) {
+/* Printlns multi-lines */
+func Printlns(title string, messages ...interface{}) {
 	// set the color
 	fmt.Printf("%v", current_title_color)
 	// print title

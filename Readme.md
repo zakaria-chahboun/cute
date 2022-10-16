@@ -16,7 +16,7 @@ The idea is to simplify the printing of messages in the terminal, *especially in
 
 ## Print line
 ```go
-cute.Println("Hi everyone", "My name is Zakaria!")
+cute.Println("Hi everyone", "My name is", "Zakaria!")
 ```
 
 Screenshot
@@ -27,7 +27,7 @@ Screenshot
 
 ## Print muti-lines
 ```go
-cute.Printlines("Hi everyone", "My name is Zakaria!", "Zaki is my nick name.")
+cute.Printlns("Hi everyone", "My name is Zakaria!", "Zaki is my nick name.")
 ```
 
 Screenshot
