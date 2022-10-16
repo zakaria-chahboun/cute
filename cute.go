@@ -52,60 +52,60 @@ func SetMessageColor(c CuteColor) {
 /* Printlns multi-lines */
 func Printlns(title string, messages ...interface{}) {
 	// set the color
-	fmt.Printf("%v", current_title_color)
+	colorize(current_title_color)
 	// print title
 	fmt.Println(titleWithBoxDraw(title))
 	// set the color
-	fmt.Printf("%v", current_message_color)
+	colorize(current_message_color)
 	// print messages
 	for _, m := range messages {
 		fmt.Println(messageDraw(m))
 	}
 	// reset
-	fmt.Printf("%v", ColorReset)
+	colorize(ColorReset)
 }
 
 /* Println */
 func Println(title string, messages ...interface{}) {
 	// set the color
-	fmt.Printf("%v", current_title_color)
+	colorize(current_title_color)
 	// print title
 	fmt.Println(titleWithBoxDraw(title))
 	// set the color
-	fmt.Printf("%v", current_message_color)
+	colorize(current_message_color)
 	// print messages
 	var lines = fmt.Sprintln(messages...)
 	if strings.TrimSpace(lines) != "" {
 		fmt.Println(messageDraw(lines))
 	}
 	// reset
-	fmt.Printf("%v", ColorReset)
+	colorize(ColorReset)
 }
 
 /* Println */
 func Printf(title string, message string, params ...interface{}) {
 	// set the color
-	fmt.Printf("%v", current_title_color)
+	colorize(current_title_color)
 	// print title
 	fmt.Println(titleWithBoxDraw(title))
 	// set the color
-	fmt.Printf("%v", current_message_color)
+	colorize(current_message_color)
 	// print messages
 	fmt.Printf(messageDraw(message), params...)
 	// reset
-	fmt.Printf("%v", ColorReset)
+	colorize(ColorReset)
 }
 
 /* a cute panic like */
 func Check(title string, err error) {
 	if err != nil {
-		// set the color
+		// set red color for all
 		fmt.Printf("%v", ColorBrightRed)
 		// print title
 		fmt.Println(titleWithBoxDraw(title))
 		// print error message
 		fmt.Println("🗲", err.Error())
-		fmt.Printf("%v", ColorReset)
+		colorize(ColorReset)
 		os.Exit(1)
 	}
 }
@@ -134,4 +134,9 @@ func titleWithBoxDraw(title string) (box string) {
 func messageDraw(message interface{}) (msg string) {
 	msg = fmt.Sprintf("🭬 %v", message)
 	return
+}
+
+/* local: start coloring */
+func colorize(color CuteColor) {
+	fmt.Printf("%v", color)
 }
