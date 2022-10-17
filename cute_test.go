@@ -25,18 +25,10 @@ func TestCuteFunctions(t *testing.T) {
 	Println("Println: No lines")
 	Printlns("Printlns: No lines")
 
-	list := NewList("Yummy Juice!")
-
-	SetMessageColor(ColorBrightRed)
-	list.Add("4 strawberry")
-
-	SetMessageColor(ColorBrightGreen)
-	list.Add("1 avocado")
-
-	SetMessageColor(ColorWhite)
-	list.Addf("%d ml %s", 500, "milk")
-
-	SetTitleColor(ColorBrightBlue)
+	list := NewList(ColorBrightBlue, "Yummy Juice!")
+	list.Add(ColorBrightRed, "4 strawberry")
+	list.Add(ColorBrightGreen, "1 avocado")
+	list.Addf(ColorWhite, "%d ml %s", 500, "milk")
 	list.Print()
 
 	Check("Error", errors.New("This is a cute panic!"))

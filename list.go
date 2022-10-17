@@ -2,49 +2,54 @@ package cute
 
 import "fmt"
 
-/* List (print lines dynamically) */
-type List struct {
-	title string
-	lines []map[CuteColor]string // color, message
+/* CuteList (print lines dynamically) */
+type CuteList struct {
+	Title      string
+	TitleColor CuteColor
+	Lines      []CuteLine
+}
+
+type CuteLine struct {
+	Message      any
+	MessageColor CuteColor
 }
 
 // constructor of list
-func NewList(title string) *List {
-	return &List{
-		title: title,
-		lines: []map[CuteColor]string{},
+func NewList(color CuteColor, title string) *CuteList {
+	return &CuteList{
+		TitleColor: color,
+		Title:      title,
 	}
 }
 
 /* add message to list*/
-func (this *List) Add(message any) {
-	line := map[CuteColor]string{
-		current_message_color: messageDraw(fmt.Sprint(message)),
-	}
-	this.lines = append(this.lines, line)
+func (this *CuteList) Add(color CuteColor, message any) {
+	this.Lines = append(this.Lines, CuteLine{
+		MessageColor: color,
+		Message:      message,
+	})
 }
 
 /* addf message to list */
-func (this *List) Addf(message string, params ...any) {
-	line := map[CuteColor]string{
-		current_message_color: fmt.Sprintf(messageDraw(message), params...),
-	}
-	this.lines = append(this.lines, line)
+func (this *CuteList) Addf(color CuteColor, message string, params ...any) {
+	this.Lines = append(this.Lines, CuteLine{
+		MessageColor: color,
+		Message:      fmt.Sprintf(message, params...),
+	})
 }
 
 /* print list of messages lines */
-func (this *List) Print() {
-	// set color
-	colorize(current_title_color)
+func (this *CuteList) Print() {
+	// set title color
+	colorize(this.TitleColor)
 	// print title
-	fmt.Println(titleWithBoxDraw(this.title))
-	for _, line := range this.lines {
-		for color, message := range line {
-			// set color
-			colorize(color)
-			// print message
-			fmt.Println(message)
-		}
+	fmt.Println(drawTitle(this.Title))
+
+	for _, line := range this.Lines {
+		// set message color
+		colorize(line.MessageColor)
+		// print message
+		fmt.Println(drawMessage(line.Message))
 	}
 	// reset
 	colorize(ColorReset)
