@@ -19,18 +19,17 @@ The idea is to simplify the printing of messages in the terminal, *especially in
 cute.Println("Hi everyone", "My name is", "Zakaria!")
 ```
 
-Screenshot
-
 <img src="./screenshots/01.png" alt="print line" width=500/>
 
 > As you see the default color for the title is `bright yellow` and for the message is `bright purple`.
+
+## Note
+If the results does not appear well. We suggest you to use fonts like `MesloLGS NF` or `Fira Code` in your terminal!
 
 ## Print muti-lines
 ```go
 cute.Printlns("Hi everyone", "My name is Zakaria!", "Zaki is my nick name.")
 ```
-
-Screenshot
 
 <img src="./screenshots/02.png" alt="print multi-lines" width=500/>
 
@@ -41,8 +40,6 @@ The `cute.Check(..)` is useful in case of errors, especially if you have a lot o
 // equal to (if error != nil)
 cute.Check("Error Title", errors.New("This is a cute panic!"))
 ```
-
-Screenshot
 
 <img src="./screenshots/03.png" alt="check errors" width=500/>
 
@@ -67,8 +64,6 @@ cute.SetMessageColor(cute.ColorBrightGreen)
 cute.Println("Hi everyone", "My name is Zakaria!")
 ```
 
-Screenshot
-
 <img src="./screenshots/04.png" alt="colors" width=500/>
 
 ## Printf
@@ -76,12 +71,40 @@ Screenshot
 cute.Printf("Another title", "%s, a Country in North Africa.\n", "Morocco")
 ```
 
-Screenshot
-
 <img src="./screenshots/05.png" alt="printf" width=500/>
 
-## Note
-If the results does not appear well. We suggest you to use fonts like `MesloLGS NF` or `Fira Code` in your terminal!
+## List
+You can print a list of lines dynamically!
+
+```go
+list := cute.NewList("Yummy Juice!")
+list.Add("4 strawberry")
+list.Add("1 avocado")
+list.Addf("%d ml %s", 500, "milk")
+list.Print()
+```
+
+<img src="./screenshots/06.png" alt="print list" width=500/>
+
+You can also specify the color message for each line:
+
+```go
+cute.SetTitleColor(cute.ColorBrightBlue)
+list := cute.NewList("Yummy Juice!")
+
+cute.SetMessageColor(cute.ColorBrightRed)
+list.Add("4 strawberry")
+
+cute.SetMessageColor(cute.ColorBrightGreen)
+list.Add("1 avocado")
+
+cute.SetMessageColor(cute.ColorWhite)
+list.Addf("%d ml %s", 500, "milk")
+
+list.Print()
+```
+
+<img src="./screenshots/07.png" alt="print list with colors" width=500/>
 
 ## Real example
 [Tarjem](https://github.com/zakaria-chahboun/tarjem) is used our cute package, Here are some examples:
