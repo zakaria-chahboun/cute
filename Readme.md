@@ -74,37 +74,18 @@ cute.Printf("Another title", "%s, a Country in North Africa.\n", "Morocco")
 <img src="./screenshots/05.png" alt="printf" width=500/>
 
 ## List
-You can print a list of lines dynamically!
+You can print a list of lines dynamically! You can also specify the color for each line:
 
 ```go
-list := cute.NewList("Yummy Juice!")
-list.Add("4 strawberry")
-list.Add("1 avocado")
-list.Addf("%d ml %s", 500, "milk")
+// juice recipe 🧃
+list := cute.NewList(cute.ColorBrightBlue, "Yummy Juice!")
+list.Add(cute.ColorBrightRed, "4 strawberry")
+list.Add(cute.ColorBrightGreen, "1 avocado")
+list.Addf(cute.ColorWhite, "%d ml %s", 500, "milk")
 list.Print()
 ```
 
-<img src="./screenshots/06.png" alt="print list" width=500/>
-
-You can also specify the color message for each line:
-
-```go
-cute.SetTitleColor(cute.ColorBrightBlue)
-list := cute.NewList("Yummy Juice!")
-
-cute.SetMessageColor(cute.ColorBrightRed)
-list.Add("4 strawberry")
-
-cute.SetMessageColor(cute.ColorBrightGreen)
-list.Add("1 avocado")
-
-cute.SetMessageColor(cute.ColorWhite)
-list.Addf("%d ml %s", 500, "milk")
-
-list.Print()
-```
-
-<img src="./screenshots/07.png" alt="print list with colors" width=500/>
+<img src="./screenshots/06.png" alt="print list with colors" width=500/>
 
 ## Real example
 [Tarjem](https://github.com/zakaria-chahboun/tarjem) is used our cute package, Here are some examples:
