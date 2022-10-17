@@ -50,7 +50,7 @@ func SetMessageColor(c CuteColor) {
 }
 
 /* Printlns multi-lines */
-func Printlns(title string, messages ...interface{}) {
+func Printlns(title string, messages ...any) {
 	// set the color
 	colorize(current_title_color)
 	// print title
@@ -66,7 +66,7 @@ func Printlns(title string, messages ...interface{}) {
 }
 
 /* Println */
-func Println(title string, messages ...interface{}) {
+func Println(title string, messages ...any) {
 	// set the color
 	colorize(current_title_color)
 	// print title
@@ -83,7 +83,7 @@ func Println(title string, messages ...interface{}) {
 }
 
 /* Println */
-func Printf(title string, message string, params ...interface{}) {
+func Printf(title string, message string, params ...any) {
 	// set the color
 	colorize(current_title_color)
 	// print title
@@ -131,7 +131,7 @@ func titleWithBoxDraw(title string) (box string) {
 }
 
 /* local draw message */
-func messageDraw(message interface{}) (msg string) {
+func messageDraw(message any) (msg string) {
 	msg = fmt.Sprintf("🭬 %v", message)
 	return
 }
