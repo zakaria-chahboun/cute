@@ -54,12 +54,12 @@ func Printlns(title string, messages ...any) {
 	// set the color
 	colorize(current_title_color)
 	// print title
-	fmt.Println(titleWithBoxDraw(title))
+	fmt.Println(drawTitle(title))
 	// set the color
 	colorize(current_message_color)
 	// print messages
 	for _, m := range messages {
-		fmt.Println(messageDraw(m))
+		fmt.Println(drawMessage(m))
 	}
 	// reset
 	colorize(ColorReset)
@@ -70,13 +70,13 @@ func Println(title string, messages ...any) {
 	// set the color
 	colorize(current_title_color)
 	// print title
-	fmt.Println(titleWithBoxDraw(title))
+	fmt.Println(drawTitle(title))
 	// set the color
 	colorize(current_message_color)
 	// print messages
 	var lines = fmt.Sprintln(messages...)
 	if strings.TrimSpace(lines) != "" {
-		fmt.Println(messageDraw(lines))
+		fmt.Println(drawMessage(lines))
 	}
 	// reset
 	colorize(ColorReset)
@@ -87,11 +87,11 @@ func Printf(title string, message string, params ...any) {
 	// set the color
 	colorize(current_title_color)
 	// print title
-	fmt.Println(titleWithBoxDraw(title))
+	fmt.Println(drawTitle(title))
 	// set the color
 	colorize(current_message_color)
 	// print messages
-	fmt.Printf(messageDraw(message), params...)
+	fmt.Printf(drawMessage(message), params...)
 	// reset
 	colorize(ColorReset)
 }
@@ -102,7 +102,7 @@ func Check(title string, err error) {
 		// set red color for all
 		fmt.Printf("%v", ColorBrightRed)
 		// print title
-		fmt.Println(titleWithBoxDraw(title))
+		fmt.Println(drawTitle(title))
 		// print error message
 		fmt.Println("🗲", err.Error())
 		colorize(ColorReset)
@@ -111,7 +111,7 @@ func Check(title string, err error) {
 }
 
 /* local draw title with box */
-func titleWithBoxDraw(title string) (box string) {
+func drawTitle(title string) (box string) {
 	// box elements
 	topright := "╮"
 	topleft := "╭"
@@ -131,7 +131,7 @@ func titleWithBoxDraw(title string) (box string) {
 }
 
 /* local draw message */
-func messageDraw(message any) (msg string) {
+func drawMessage(message any) (msg string) {
 	msg = fmt.Sprintf("🭬 %v", message)
 	return
 }
