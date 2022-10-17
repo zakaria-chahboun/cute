@@ -79,13 +79,27 @@ You can print a list of lines dynamically! You can also specify the color for ea
 ```go
 // juice recipe 🧃
 list := cute.NewList(cute.ColorBrightBlue, "Yummy Juice!")
-list.Add(cute.ColorBrightRed, "4 strawberry")
-list.Add(cute.ColorBrightGreen, "1 avocado")
-list.Addf(cute.ColorWhite, "%d ml %s", 500, "milk")
+list.Add(cute.ColorBrightGreen, "1 avocado 🥑")
+list.Add(cute.ColorBrightRed, "4 strawberry 🍓")
+list.Addf(cute.ColorWhite, "%d ML %s", 500, "milk 🥛")
 list.Print()
 ```
 
 <img src="./screenshots/06.png" alt="print list with colors" width=500/>
+
+## How you can use it with Scan?
+This is a little example:
+
+```go
+cute.Printf("How old are you?", "")
+
+var age int
+_, err := fmt.Scanln(&age)
+cute.Check("Error scan", err)
+
+cute.Println("Info", "Your age is:", age)
+```
+<img src="./screenshots/07.png" alt="use cute with Scan" width=500/>
 
 ## Real example
 [Tarjem](https://github.com/zakaria-chahboun/tarjem) is used our cute package, Here are some examples:
