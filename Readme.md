@@ -24,7 +24,7 @@ cute.Println("Hi everyone", "My name is", "Zakaria!")
 > As you see the default color for the title is `bright yellow` and for the message is `bright purple`.
 
 ## Note
-If the results does not appear well. We suggest you to use fonts like `MesloLGS NF` or `Fira Code` in your terminal!
+If the results does not appears well. We suggest you to use fonts like `MesloLGS NF` or `Fira Code` in your terminal!
 
 ## Print muti-lines
 ```go
