@@ -9,6 +9,7 @@ type CuteList struct {
 	Lines      []CuteLine
 }
 
+/* CluteLine (child of CuteList) */
 type CuteLine struct {
 	Message      any
 	MessageColor CuteColor
@@ -22,7 +23,7 @@ func NewList(color CuteColor, title string) *CuteList {
 	}
 }
 
-/* add message to list*/
+/* add message to list */
 func (this *CuteList) Add(color CuteColor, message any) {
 	this.Lines = append(this.Lines, CuteLine{
 		MessageColor: color,
@@ -38,7 +39,7 @@ func (this *CuteList) Addf(color CuteColor, message string, params ...any) {
 	})
 }
 
-/* print list of messages lines */
+/* print list */
 func (this *CuteList) Print() {
 	// set title color
 	colorize(this.TitleColor)

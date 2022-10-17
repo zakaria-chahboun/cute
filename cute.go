@@ -74,8 +74,8 @@ func Println(title string, messages ...any) {
 	// set the color
 	colorize(current_message_color)
 	// print messages
-	var lines = fmt.Sprintln(messages...)
-	if strings.TrimSpace(lines) != "" {
+	if len(messages) != 0 {
+		lines := fmt.Sprintln(messages...)
 		fmt.Println(drawMessage(lines))
 	}
 	// reset
