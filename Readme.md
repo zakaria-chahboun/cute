@@ -45,22 +45,22 @@ cute.Check("Error Title", errors.New("This is a cute panic!"))
 
 ## Change colors
 You can change the color:
-* `ColorReset`
-* `ColorDefault`
+* `ResetColor`
+* `DefaultColor`
 
 
-* `ColorBlack` / `ColorBrightBlack`
-* `ColorRed` / `ColorBrightRed`
-* `ColorYellow` / `ColorBrightYellow`
-* `ColorGreen` / `ColorBrightGreen`
-* `ColorBlue` / `ColorBrightBlue`
-* `ColorPurple` / `ColorBrightPurple`
-* `ColorCyan` / `ColorBrightCyan`
-* `ColorWhite` / `ColorBrightWhite`
+* `Black` / `BrightBlack`
+* `Red` / `BrightRed`
+* `Yellow` / `BrightYellow`
+* `Green` / `BrightGreen`
+* `Blue` / `BrightBlue`
+* `Purple` / `BrightPurple`
+* `Cyan` / `BrightCyan`
+* `White` / `BrightWhite`
 
 ```go
-cute.SetTitleColor(cute.ColorBrightBlue)
-cute.SetMessageColor(cute.ColorBrightGreen)
+cute.SetTitleColor(cute.BrightBlue)
+cute.SetMessageColor(cute.BrightGreen)
 cute.Println("Hi everyone", "My name is Zakaria!")
 ```
 
@@ -78,10 +78,10 @@ You can print a list of lines dynamically! You can also specify the color for ea
 
 ```go
 // juice recipe 🧃
-list := cute.NewList(cute.ColorBrightBlue, "Yummy Juice!")
-list.Add(cute.ColorBrightGreen, "1 avocado 🥑")
-list.Add(cute.ColorBrightRed, "4 strawberry 🍓")
-list.Addf(cute.ColorWhite, "%d ML %s", 500, "milk 🥛")
+list := cute.NewList(cute.BrightBlue, "Yummy Juice!")
+list.Add(cute.BrightGreen, "1 avocado 🥑")
+list.Add(cute.BrightRed, "4 strawberry 🍓")
+list.Addf(cute.White, "%d ML %s", 500, "milk 🥛")
 list.Print()
 ```
 

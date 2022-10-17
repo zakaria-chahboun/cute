@@ -8,7 +8,7 @@ import (
 // Test equality of CuteColor type.
 func TestCuteColorType(t *testing.T) {
 	redColor := CuteColor("\033[31m")
-	if ColorRed != redColor {
+	if Red != redColor {
 		t.Fail()
 	}
 }
@@ -18,17 +18,17 @@ func TestCuteFunctions(t *testing.T) {
 	Println("Println", "Hi! i'm", "Zaki")
 	Printf("Printf", "UID is %v\n", 1399745)
 
-	SetTitleColor(ColorBrightBlue)
-	SetMessageColor(ColorBrightGreen)
+	SetTitleColor(BrightBlue)
+	SetMessageColor(BrightGreen)
 	Printlns("Printlns", "Line1", "Line2", "Line3")
 
 	Println("Println: No lines")
 	Printlns("Printlns: No lines")
 
-	list := NewList(ColorBrightBlue, "Yummy Juice!")
-	list.Add(ColorBrightRed, "4 strawberry")
-	list.Add(ColorBrightGreen, "1 avocado")
-	list.Addf(ColorWhite, "%d ml %s", 500, "milk")
+	list := NewList(BrightBlue, "Yummy Juice!")
+	list.Add(BrightRed, "4 strawberry")
+	list.Add(BrightGreen, "1 avocado")
+	list.Addf(White, "%d ml %s", 500, "milk")
 	list.Print()
 
 	Check("Error", errors.New("This is a cute panic!"))

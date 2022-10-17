@@ -11,32 +11,32 @@ type CuteColor string
 
 /* list of available colors */
 const (
-	ColorReset   CuteColor = "\033[0m"
-	ColorDefault CuteColor = "\033[39m"
+	ResetColor   CuteColor = "\033[0m"
+	DefaultColor CuteColor = "\033[39m"
 
-	ColorBlack  CuteColor = "\033[30m"
-	ColorRed    CuteColor = "\033[31m"
-	ColorGreen  CuteColor = "\033[32m"
-	ColorYellow CuteColor = "\033[33m"
-	ColorBlue   CuteColor = "\033[34m"
-	ColorPurple CuteColor = "\033[35m"
-	ColorCyan   CuteColor = "\033[36m"
-	ColorWhite  CuteColor = "\033[37m"
+	Black  CuteColor = "\033[30m"
+	Red    CuteColor = "\033[31m"
+	Green  CuteColor = "\033[32m"
+	Yellow CuteColor = "\033[33m"
+	Blue   CuteColor = "\033[34m"
+	Purple CuteColor = "\033[35m"
+	Cyan   CuteColor = "\033[36m"
+	White  CuteColor = "\033[37m"
 
-	ColorBrightBlack  CuteColor = "\033[90m"
-	ColorBrightRed    CuteColor = "\033[91m"
-	ColorBrightGreen  CuteColor = "\033[92m"
-	ColorBrightYellow CuteColor = "\033[93m"
-	ColorBrightBlue   CuteColor = "\033[94m"
-	ColorBrightPurple CuteColor = "\033[95m"
-	ColorBrightCyan   CuteColor = "\033[96m"
-	ColorBrightWhite  CuteColor = "\033[97m"
+	BrightBlack  CuteColor = "\033[90m"
+	BrightRed    CuteColor = "\033[91m"
+	BrightGreen  CuteColor = "\033[92m"
+	BrightYellow CuteColor = "\033[93m"
+	BrightBlue   CuteColor = "\033[94m"
+	BrightPurple CuteColor = "\033[95m"
+	BrightCyan   CuteColor = "\033[96m"
+	BrightWhite  CuteColor = "\033[97m"
 )
 
 /* local variables */
 var (
-	current_title_color   CuteColor = ColorBrightYellow
-	current_message_color CuteColor = ColorBrightPurple
+	current_title_color   CuteColor = BrightYellow
+	current_message_color CuteColor = BrightPurple
 )
 
 /* Change the title color */
@@ -62,7 +62,7 @@ func Printlns(title string, messages ...any) {
 		fmt.Println(drawMessage(m))
 	}
 	// reset
-	colorize(ColorReset)
+	colorize(ResetColor)
 }
 
 /* Println */
@@ -79,7 +79,7 @@ func Println(title string, messages ...any) {
 		fmt.Println(drawMessage(lines))
 	}
 	// reset
-	colorize(ColorReset)
+	colorize(ResetColor)
 }
 
 /* Println */
@@ -93,19 +93,19 @@ func Printf(title string, message string, params ...any) {
 	// print messages
 	fmt.Printf(drawMessage(message), params...)
 	// reset
-	colorize(ColorReset)
+	colorize(ResetColor)
 }
 
 /* a cute panic like */
 func Check(title string, err error) {
 	if err != nil {
 		// set red color for all
-		fmt.Printf("%v", ColorBrightRed)
+		fmt.Printf("%v", BrightRed)
 		// print title
 		fmt.Println(drawTitle(title))
 		// print error message
 		fmt.Println("🗲", err.Error())
-		colorize(ColorReset)
+		colorize(ResetColor)
 		os.Exit(1)
 	}
 }

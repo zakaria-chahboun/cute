@@ -53,5 +53,5 @@ func (this *CuteList) Print() {
 		fmt.Println(drawMessage(line.Message))
 	}
 	// reset
-	colorize(ColorReset)
+	colorize(ResetColor)
 }
