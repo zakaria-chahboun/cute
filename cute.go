@@ -120,8 +120,10 @@ func drawTitle(title string) (box string) {
 	bottomright := "╯"
 	bottomleft := "╰"
 
+	// calculate the length of line
+	length := calculateLength(title)
 	// draw line
-	line := strings.Repeat(w, len(title)+2)
+	line := strings.Repeat(w, length+2)
 
 	// print title box
 	box = fmt.Sprintf("%v%v%v\n", topleft, line, topright)
