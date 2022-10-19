@@ -104,7 +104,7 @@ We supported also a lot of languages and emojis!
 ```go
 // arabic
 cute.Println("﴾ الله خالِقُ كُلِّ شيء ﴿")
-// frensh
+// french
 cute.Println("délicieux pain français")
 // spanish
 cute.Println("¡Hola! español")
