@@ -10,7 +10,7 @@ Support me to be an independent open-source programmer 💟
 
 ## Installation
 ```sh
-go get -u github.com/zakaria-chahboun/cute@latest
+go get github.com/zakaria-chahboun/cute
 ```
 The idea is to simplify the printing of messages in the terminal, *especially in error case*. Letting you to put a title for your message in different colors.
 
@@ -22,9 +22,6 @@ cute.Println("Hi everyone", "My name is", "Zakaria!")
 <img src="./screenshots/01.png" alt="print line" width=500/>
 
 > As you see the default color for the title is `bright yellow` and for the message is `bright purple`.
-
-## Note
-If the results does not appears well. We suggest you to use fonts like `MesloLGS NF` or `Fira Code` in your terminal!
 
 ## Print muti-lines
 ```go
@@ -101,6 +98,40 @@ cute.Println("Info", "Your age is:", age)
 ```
 <img src="./screenshots/07.png" alt="use cute with Scan" width=500/>
 
+## Unicode in title box
+We supported also a lot of languages and emojis!
+
+```go
+// arabic
+Println("﴾ الله خالِقُ كُلِّ شيء ﴿")
+// frensh
+Println("délicieux pain français")
+// spanish
+Println("¡Hola! español")
+// german
+Println("ich möchte Kaffee")
+// chinese (simplified)
+Println("中国的长城")
+// chinese (traditional)
+Println("中國的長城")
+// japanese (hiragana)
+Println("進撃の巨人 すばらしい")
+// russian
+Println("русская литература")
+// turkish
+Println("türk şarküteri")
+// korean
+Println("한국라면 맛있다")
+// hindi (devanagari)
+Println("मसालों की भूमि")
+// emoji
+Println("✅  🚀")
+// complex
+Println("sweet | sucré | süß | 甜的 | 甘い | मीठा | حلو | 🍬")
+```
+
+<img src="./screenshots/unicode-support.png" alt="support unicode"/>
+
 ## Real example
 [Tarjem](https://github.com/zakaria-chahboun/tarjem) is used our cute package, Here are some examples:
 
@@ -110,5 +141,6 @@ cute.Println("Info", "Your age is:", age)
 Feel free to contribute or propose a feature or share your idea with us!
 
 -------
+If you are using `cute` in your project please share that with us 😍👇
 Twitter: [@Zaki_Chahboun](https://twitter.com/zaki_chahboun)
 	
