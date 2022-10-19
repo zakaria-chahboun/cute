@@ -103,31 +103,31 @@ We supported also a lot of languages and emojis!
 
 ```go
 // arabic
-Println("﴾ الله خالِقُ كُلِّ شيء ﴿")
+cute.Println("﴾ الله خالِقُ كُلِّ شيء ﴿")
 // frensh
-Println("délicieux pain français")
+cute.Println("délicieux pain français")
 // spanish
-Println("¡Hola! español")
+cute.Println("¡Hola! español")
 // german
-Println("ich möchte Kaffee")
+cute.Println("ich möchte Kaffee")
 // chinese (simplified)
-Println("中国的长城")
+cute.Println("中国的长城")
 // chinese (traditional)
-Println("中國的長城")
+cute.Println("中國的長城")
 // japanese (hiragana)
-Println("進撃の巨人 すばらしい")
+cute.Println("進撃の巨人 すばらしい")
 // russian
-Println("русская литература")
+cute.Println("русская литература")
 // turkish
-Println("türk şarküteri")
+cute.Println("türk şarküteri")
 // korean
-Println("한국라면 맛있다")
+cute.Println("한국라면 맛있다")
 // hindi (devanagari)
-Println("मसालों की भूमि")
+cute.Println("मसालों की भूमि")
 // emoji
-Println("✅  🚀")
+cute.Println("✅  🚀")
 // complex
-Println("sweet | sucré | süß | 甜的 | 甘い | मीठा | حلو | 🍬")
+cute.Println("sweet | sucré | süß | 甜的 | 甘い | मीठा | حلو | 🍬")
 ```
 
 <img src="./screenshots/unicode-support.png" alt="support unicode"/>
