@@ -141,6 +141,5 @@ Println("sweet | sucré | süß | 甜的 | 甘い | मीठा | حلو | 🍬
 Feel free to contribute or propose a feature or share your idea with us!
 
 -------
-If you are using `cute` in your project please share that with us 😍👇
-Twitter: [@Zaki_Chahboun](https://twitter.com/zaki_chahboun)
+If you are using `cute` in your project please share that with us 😍 Twitter: [@Zaki_Chahboun](https://twitter.com/zaki_chahboun)
 	
